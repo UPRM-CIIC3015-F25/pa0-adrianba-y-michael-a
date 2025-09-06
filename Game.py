@@ -1,5 +1,6 @@
 import pygame, sys, random
-
+pygame.mixer.init()
+sound_effect = pygame.mixer.Sound('sounds/hit.wav')
 def ball_movement():
     """
     Handles the movement of the ball and collision detection with the player and screen boundaries.
@@ -25,6 +26,7 @@ def ball_movement():
             score += 1  # Increase player score
             ball_speed_y *= -1  # Reverse ball's vertical direction
             # TODO Task 6: Add sound effects HERE
+            sound_effect.play()
 
     # Ball collision with top boundary
     if ball.top <= 0:
